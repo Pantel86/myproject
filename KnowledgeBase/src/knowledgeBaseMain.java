@@ -1,7 +1,7 @@
 import java.awt.*;
 import javax.swing.*;
 
-public class Main extends JFrame{
+public class knowledgeBaseMain extends JFrame{
 
 	private static final long serialVersionUID = 1L;
 	public static JFrame f = new JFrame("Window");
@@ -51,9 +51,10 @@ public class Main extends JFrame{
 		p1.add(userNamelbl);
 		p1.add(username);
 		
-		//p2
+		/*//p2
 		p2.add(passwordlbl);
-		p2.add(password);
+		p2.add(password);*/
+		
 	}
 	
 }
