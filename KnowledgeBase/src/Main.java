@@ -2,10 +2,7 @@ import java.awt.*;
 import javax.swing.*;
 
 public class Main extends JFrame{
-	
-	/**
-	 * 
-	 */
+
 	private static final long serialVersionUID = 1L;
 	public static JFrame f = new JFrame("Window");
 	public static JPanel parentPanel, lineHandler, p1, p2, p3;
