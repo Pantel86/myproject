@@ -1,7 +1,7 @@
 import random
 
 number = random.randint(1, 10)
-tries = 4
+tries = 1
 
 
 uname = input("Hello, What's is your username?")
@@ -19,6 +19,12 @@ if question == "y":
         print("Guess lower...")
     if guess < number:
         print("Guess higher...")
+    while guess != number:
+        tries =+ 1
+        guess = int(input("Try again: "))
+        if guess < number:
+            print("Guess Higher...")
     if guess == number:
-        print("OMG YOU GUESSED IT!")
-    
+        print("You're right! You win! The number was", number, \
+              "and it only", tries, "tries!")
+        
