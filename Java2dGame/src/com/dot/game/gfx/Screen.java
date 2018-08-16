@@ -21,7 +21,7 @@ public class Screen {
 		this.height = height;
 		this.sheet = sheet;
 
-		//what colors correspond to what actual colors on sprite sheet
+		// what colors correspond to what actual colors on sprite sheet
 		for (int i = 0; i < MAP_WIDTH * MAP_WIDTH; i++) {
 			colours[i * 4 + 0] = 0xff00ff;
 			colours[i * 4 + 1] = 0x00ffff;
@@ -31,7 +31,7 @@ public class Screen {
 	}
 
 	public void render(int[] pixels, int offset, int row) {
-		//sets minimum x and y tiles, so the images stays within the frame
+		// sets minimum x and y tiles, so the images stays within the frame
 		for (int yTile = yOffset >> 3; yTile <= (yOffset + height) >> 3; yTile++) {
 			int yMin = yTile * 8 - yOffset;
 			int yMax = yMin + 8;
@@ -48,14 +48,14 @@ public class Screen {
 				if (xMax > width)
 					xMax = width;
 
-				//this is the actual tile index
+				// this is the actual tile index
 				int tileIndex = (xTile & (MAP_WIDTH_MASK)) + (yTile & (MAP_WIDTH_MASK)) * MAP_WIDTH;
 
-				//drawing the tile index out on screen
+				// drawing the tile index out on screen
 				for (int y = yMin; y < yMax; y++) {
 					int sheetPixel = ((y + yOffset) & 7) * sheet.width + ((xMin + xOffset) & 7);
 					int tilePixel = offset + xMin + y * row;
-					for(int x = xMin; x < xMax; x++) {
+					for (int x = xMin; x < xMax; x++) {
 						int colour = tileIndex * 4 + sheet.pixels[sheetPixel++];
 						pixels[tilePixel++] = colours[colour];
 					}
